@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>六条人's Autumn Travel · 北疆大环线</title>
+<meta name="description" content="六个人，一辆 MPV，11天10晚。乌鲁木齐 → S21沙漠高速 → 阿勒泰 → 禾木 → 喀纳斯 → 白哈巴 → 克拉玛依 → 赛里木湖 → 喀拉峻 → 那拉提 → 独库公路，北疆大环线自驾路书与行李清单。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Caveat:wght@500;700&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f9f5ea;          /* 手账纸 */
+    --paper-deep: #f3eddd;
+    --ink: #3a352c;
+    --ink-soft: #776f5d;
+    --ink-faint: #aaa189;
+    --pencil: #8a6d3b;         /* 铅笔棕 */
+    --amber: #d9a441;          /* 喀纳斯之黄 */
+    --amber-deep: #b9832a;
+    --pine: #5d7a52;           /* 泰加林之绿 */
+    --pine-deep: #42583a;
+    --maple: #b4533c;          /* 白桦红叶之红 */
+    --maple-deep: #93402d;
+    --lake: #3e7c8c;
+    --hairline: rgba(58, 53, 44, 0.14);
+    --card: #fffdf6;
+    --shadow-lg: 0 24px 60px -18px rgba(58, 53, 44, 0.28);
+    --shadow-md: 0 10px 28px -10px rgba(58, 53, 44, 0.2);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --hand: "Ma Shan Zheng", "Noto Serif SC", serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+    background: var(--paper);
+    background-image:
+      radial-gradient(rgba(58,53,44,0.05) 1px, transparent 1px);
+    background-size: 26px 26px;
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: rgba(217, 164, 65, 0.4); }
+
+  h1, h2, h3 { font-family: var(--hand); font-weight: 400; }
+
+  /* ---------- 顶部导航 ---------- */
+  nav {
+    position: fixed; inset: 0 0 auto 0; z-index: 60;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 5vw;
+    transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease), padding 0.5s var(--ease);
+  }
+  nav.scrolled {
+    background: rgba(249, 245, 234, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--hairline);
+    padding: 12px 5vw;
+  }
+  nav .brand { font-family: "Caveat", cursive; font-weight: 700; font-size: 24px; color: #fff; transition: color 0.5s var(--ease); text-decoration: none; transform: rotate(-2deg); display: inline-block; }
+  nav.scrolled .brand { color: var(--maple-deep); }
+  nav .links { display: flex; gap: 28px; }
+  nav .links a {
+    font-family: var(--hand); font-size: 18px; text-decoration: none; color: rgba(255,255,255,0.92);
+    position: relative; transition: color 0.5s var(--ease);
+  }
+  nav.scrolled .links a { color: var(--ink-soft); }
+  nav .links a::after {
+    content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+    background: var(--amber); transition: width 0.4s var(--ease);
+  }
+  nav .links a:hover::after { width: 100%; }
+  nav .links a:hover { color: var(--amber); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 100svh;
+    display: flex; align-items: flex-end;
+    color: #fff; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: -8% 0; z-index: 0;
+    background: url("https://commons.wikimedia.org/wiki/Special:FilePath/%E5%96%80%E7%BA%B3%E6%96%AF%E6%99%AF%E5%8C%BA%E6%9C%88%E4%BA%AE%E6%B9%BE.jpg?width=2400") center 45% / cover no-repeat, linear-gradient(160deg, #7d9b6e, #3e7c8c);
+    will-change: transform;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to top, rgba(24, 22, 14, 0.74) 0%, rgba(24, 22, 14, 0.22) 45%, rgba(24, 22, 14, 0.12) 100%);
+  }
+  .hero-inner { position: relative; z-index: 2; padding: 0 5vw 11vh; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .hero .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Caveat", cursive; font-size: 20px; letter-spacing: 0.12em; opacity: 0.95;
+  }
+  .hero .kicker::before { content: ""; width: 42px; height: 2px; background: var(--amber); }
+  .hero h1 {
+    font-size: clamp(52px, 9vw, 116px); line-height: 1.15;
+    margin: 14px 0 10px; letter-spacing: 0.02em;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    transform: rotate(-1.2deg);
+  }
+  .hero h1 .en { font-family: "Caveat", cursive; font-weight: 700; color: var(--amber); font-size: 0.72em; }
+  .hero .sub { font-size: clamp(15px, 1.6vw, 19px); font-weight: 300; opacity: 0.94; max-width: 600px; }
+  .hero .meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .chip {
+    border: 1.5px dashed rgba(255,255,255,0.55); border-radius: 999px;
+    padding: 7px 18px; font-size: 13px; letter-spacing: 0.12em;
+    backdrop-filter: blur(6px); background: rgba(255,255,255,0.08);
+  }
+  .scroll-hint {
+    position: absolute; right: 5vw; bottom: 10vh; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    font-family: "Caveat", cursive; font-size: 16px; opacity: 0.9;
+  }
+  .scroll-hint .line { width: 2px; height: 56px; background: rgba(255,255,255,0.5); overflow: hidden; position: relative; }
+  .scroll-hint .line::after {
+    content: ""; position: absolute; left: 0; top: -50%; width: 100%; height: 50%;
+    background: var(--amber); animation: drip 1.8s var(--ease) infinite;
+  }
+  @keyframes drip { to { top: 110%; } }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- 章节通用 ---------- */
+  section { padding: 110px 5vw; max-width: 1200px; margin: 0 auto; }
+  .sec-head { margin-bottom: 48px; }
+  .sec-head .no { font-family: "Caveat", cursive; font-size: 20px; color: var(--maple); font-weight: 700; }
+  .sec-head h2 {
+    font-size: clamp(36px, 5vw, 54px); margin-top: 6px; letter-spacing: 0.04em;
+    display: inline-block; position: relative;
+  }
+  .sec-head h2::after {
+    content: ""; position: absolute; left: 2%; bottom: -8px; width: 96%; height: 10px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,6 Q12,2 25,6 T50,6 T75,6 T100,6' fill='none' stroke='%23d9a441' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+    background-size: 100% 100%;
+  }
+  .sec-head p { color: var(--ink-soft); max-width: 660px; margin-top: 20px; font-size: 15px; }
+
+  /* ---------- 线路图（手绘） ---------- */
+  .map-wrap {
+    position: relative; border-radius: 18px; overflow: hidden;
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(217, 164, 65, 0.16), transparent 60%),
+      radial-gradient(900px 500px at 8% 110%, rgba(93, 122, 82, 0.15), transparent 60%),
+      var(--paper-deep);
+    border: 2px solid rgba(138, 109, 59, 0.35);
+    box-shadow: var(--shadow-md), inset 0 0 60px rgba(138, 109, 59, 0.08);
+    transform: rotate(-0.3deg);
+  }
+  .map-wrap svg { display: block; width: 100%; height: auto; }
+
+  .region-label {
+    font-family: var(--hand); font-size: 22px; fill: rgba(138, 109, 59, 0.4);
+    letter-spacing: 0.2em;
+  }
+  .route-line {
+    fill: none; stroke: var(--pencil); stroke-width: 2.2; stroke-linecap: round;
+    stroke-dasharray: 1 9; opacity: 0.8;
+    transition: opacity 1.2s var(--ease);
+  }
+  .route-line.done { opacity: 0.3; }
+  .route-progress {
+    fill: none; stroke: url(#routeGradient); stroke-width: 3.6; stroke-linecap: round;
+    filter: url(#pencilRough);
+  }
+  .node { cursor: pointer; }
+  .node .halo { fill: rgba(217, 164, 65, 0.3); animation: pulse 2.6s var(--ease) infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.7); opacity: 0.2; } }
+  .node .dot { fill: var(--paper); stroke: var(--maple); stroke-width: 3; transition: all 0.3s var(--ease); }
+  .node .dot-ring { fill: none; stroke: var(--maple); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: 0.7; }
+  .node:hover .dot, .node.active .dot { stroke: var(--amber-deep); fill: var(--amber); }
+  .node text {
+    font-family: var(--hand); font-size: 24px; fill: var(--ink);
+    paint-order: stroke; stroke: rgba(243, 237, 221, 0.92); stroke-width: 6px; stroke-linejoin: round;
+  }
+  .node .day { font-family: "Caveat", cursive; font-size: 15px; font-weight: 700; fill: var(--maple); letter-spacing: 0.06em; }
+  .node:hover .halo { animation-play-state: paused; }
+
+  /* hover 照片浮层：拍立得 */
+  .photo-tip {
+    position: absolute; z-index: 20; width: 230px; pointer-events: none;
+    border-radius: 6px; background: #fff; padding: 10px 10px 0;
+    box-shadow: var(--shadow-lg);
+    opacity: 0; transform: translateY(10px) rotate(0deg) scale(0.95);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  }
+  .photo-tip.show { opacity: 1; transform: translateY(0) rotate(-2deg) scale(1); }
+  .photo-tip img { width: 100%; height: 150px; object-fit: cover; display: block; border-radius: 2px; background: var(--paper-deep); transition: opacity 0.2s var(--ease); }
+  .photo-tip .cap { padding: 10px 4px 12px; text-align: center; }
+  .photo-tip .cap b { font-family: var(--hand); font-weight: 400; font-size: 18px; display: block; color: var(--ink); }
+  .photo-tip .cap span { font-family: "Caveat", cursive; font-size: 14px; color: var(--ink-soft); }
+
+  .map-legend {
+    display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .map-legend i {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    margin-right: 8px; vertical-align: -1px;
+  }
+  .map-legend .hand-note { font-family: var(--hand); font-size: 16px; color: var(--pencil); }
+
+  /* 行程日条：手账卡片 */
+  .day-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 48px; }
+  .day-card {
+    position: relative; background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
+    padding: 20px 18px 16px; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .day-card:nth-child(odd) { transform: rotate(-0.7deg); }
+  .day-card:nth-child(even) { transform: rotate(0.6deg); }
+  .day-card:hover { transform: translateY(-5px) rotate(0deg); box-shadow: var(--shadow-md); }
+  .day-card::before {
+    content: ""; position: absolute; top: -9px; left: 50%; width: 56px; height: 18px;
+    transform: translateX(-50%) rotate(-2deg);
+    background: rgba(217, 164, 65, 0.4); border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(58,53,44,0.1);
+  }
+  .day-card .d { font-family: "Caveat", cursive; font-size: 15px; color: var(--amber-deep); font-weight: 700; }
+  .day-card .t { font-family: var(--hand); font-size: 19px; margin-top: 4px; }
+  .day-card .s { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+  .day-card .h { font-size: 12px; color: var(--pine-deep); margin-top: 6px; }
+
+  /* ---------- 弹窗 ---------- */
+  .modal-mask {
+    position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 4vw;
+    background: rgba(40, 36, 26, 0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease);
+  }
+  .modal-mask.open { opacity: 1; pointer-events: auto; }
+  .modal {
+    width: min(680px, 100%); max-height: 88vh; overflow-y: auto;
+    background: var(--paper); border-radius: 14px; box-shadow: var(--shadow-lg);
+    transform: translateY(26px) rotate(0.5deg) scale(0.97); transition: transform 0.45s var(--ease);
+    border: 1px solid rgba(138, 109, 59, 0.3);
+  }
+  .modal-mask.open .modal { transform: rotate(-0.3deg); }
+  .modal .m-img { position: relative; height: 260px; }
+  .modal .m-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .modal .m-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(24,22,14,0.6), transparent 55%); }
+  .modal .m-title { position: absolute; left: 26px; bottom: 18px; color: #fff; z-index: 2; }
+  .modal .m-title .m-day { font-family: "Caveat", cursive; font-size: 16px; color: var(--amber); font-weight: 700; letter-spacing: 0.1em; }
+  .modal .m-title h3 { font-size: 38px; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+  .modal .m-body { padding: 26px 30px 34px; }
+  .modal .m-drive {
+    display: inline-block; font-size: 13px; color: var(--pine-deep);
+    background: rgba(93, 122, 82, 0.14); border-radius: 6px; padding: 6px 12px; margin-bottom: 18px;
+    border: 1px dashed rgba(93, 122, 82, 0.4);
+  }
+  .modal h4 {
+    font-family: var(--hand); font-weight: 400; font-size: 20px; margin: 20px 0 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .modal h4::before { content: ""; width: 18px; height: 3px; border-radius: 2px; }
+  .modal h4.spot { color: var(--pine-deep); } .modal h4.spot::before { background: var(--pine); }
+  .modal h4.warn { color: var(--maple-deep); } .modal h4.warn::before { background: var(--maple); }
+  .modal ul { list-style: none; }
+  .modal li { position: relative; padding-left: 20px; font-size: 14.5px; color: var(--ink-soft); margin-bottom: 7px; }
+  .modal li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+  .m-close {
+    position: sticky; top: 0; float: right; margin: 14px 14px 0 0; z-index: 5;
+    width: 38px; height: 38px; border-radius: 50%; border: none; cursor: pointer;
+    background: rgba(249, 245, 234, 0.92); color: var(--ink); font-size: 17px;
+    box-shadow: var(--shadow-md); transition: transform 0.3s var(--ease);
+  }
+  .m-close:hover { transform: rotate(90deg); }
+
+  /* ---------- 行李清单 ---------- */
+  #packing { max-width: none; background: linear-gradient(180deg, var(--paper-deep), var(--paper) 30%); }
+  #packing .inner { max-width: 1200px; margin: 0 auto; }
+  .pack-progress {
+    position: sticky; top: 64px; z-index: 40;
+    background: rgba(249, 245, 234, 0.92); backdrop-filter: blur(10px);
+    border: 1.5px dashed rgba(138, 109, 59, 0.4); border-radius: 12px;
+    padding: 14px 20px; display: flex; align-items: center; gap: 18px; margin-bottom: 36px;
+  }
+  .pack-progress .bar { flex: 1; height: 8px; border-radius: 99px; background: rgba(58,53,44,0.1); overflow: hidden; }
+  .pack-progress .bar i {
+    display: block; height: 100%; width: 0; border-radius: 99px;
+    background: linear-gradient(90deg, var(--pine), var(--amber), var(--maple));
+    transition: width 0.5s var(--ease);
+  }
+  .pack-progress .num { font-family: "Caveat", cursive; font-size: 18px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .pack-progress button {
+    border: 1px solid var(--hairline); background: var(--card); border-radius: 8px;
+    font-size: 12px; padding: 6px 12px; cursor: pointer; color: var(--ink-soft);
+    transition: all 0.3s var(--ease);
+  }
+  .pack-progress button:hover { color: var(--maple); border-color: var(--maple); }
+
+  .pack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+  .pack-card {
+    position: relative; background: var(--card); border: 1px solid var(--hairline); border-radius: 8px; padding: 24px 22px 16px;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .pack-card:nth-child(3n+1) { transform: rotate(-0.5deg); }
+  .pack-card:nth-child(3n+2) { transform: rotate(0.4deg); }
+  .pack-card:hover { transform: translateY(-3px) rotate(0deg); box-shadow: var(--shadow-md); }
+  .pack-card h3 { font-size: 22px; display: flex; align-items: baseline; gap: 10px; }
+  .pack-card h3 .cnt { font-family: "Caveat", cursive; font-size: 15px; color: var(--ink-faint); font-weight: 700; }
+  .pack-card h3::before { content: ""; width: 10px; height: 10px; border-radius: 3px; align-self: center; transform: rotate(8deg); }
+  .pack-card[data-tone="amber"] h3::before { background: var(--amber); }
+  .pack-card[data-tone="pine"] h3::before { background: var(--pine); }
+  .pack-card[data-tone="maple"] h3::before { background: var(--maple); }
+  .pack-card[data-tone="lake"] h3::before { background: var(--lake); }
+  .pack-card ul { list-style: none; margin-top: 12px; }
+  .pack-card li { border-bottom: 1px dashed rgba(58,53,44,0.1); }
+  .pack-card li:last-child { border-bottom: none; }
+  .pack-item {
+    display: flex; gap: 12px; align-items: flex-start; padding: 8px 2px; cursor: pointer;
+    font-size: 14px; color: var(--ink-soft); user-select: none;
+  }
+  .pack-item input { display: none; }
+  .pack-item .box {
+    flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 5px;
+    border: 1.6px solid var(--ink-faint); position: relative;
+    transition: all 0.25s var(--ease); transform: rotate(-2deg);
+  }
+  .pack-item .box::after {
+    content: ""; position: absolute; left: 5px; top: 1.5px; width: 5px; height: 9px;
+    border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) scale(0);
+    transition: transform 0.25s var(--ease);
+  }
+  .pack-item input:checked + .box { background: var(--pine); border-color: var(--pine); }
+  .pack-item input:checked + .box::after { transform: rotate(45deg) scale(1); }
+  .pack-item input:checked ~ .txt { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: rgba(58,53,44,0.3); }
+  .pack-item .txt { transition: color 0.25s var(--ease); }
+
+  .tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 48px; }
+  .tip {
+    border-radius: 8px; padding: 20px 22px; font-size: 14px; line-height: 1.8;
+    border: 1px solid var(--hairline); background: var(--card);
+  }
+  .tip b { display: block; font-family: var(--hand); font-weight: 400; font-size: 20px; margin-bottom: 6px; }
+  .tip.amber { background: rgba(217, 164, 65, 0.1); border-color: rgba(217, 164, 65, 0.4); }
+  .tip.amber b { color: var(--amber-deep); }
+  .tip.pine { background: rgba(93, 122, 82, 0.1); border-color: rgba(93, 122, 82, 0.35); }
+  .tip.pine b { color: var(--pine-deep); }
+  .tip.maple { background: rgba(180, 83, 60, 0.09); border-color: rgba(180, 83, 60, 0.35); }
+  .tip.maple b { color: var(--maple-deep); }
+  .tip.lake { background: rgba(62, 124, 140, 0.09); border-color: rgba(62, 124, 140, 0.35); }
+  .tip.lake b { color: #2c5a66; }
+
+  footer {
+    padding: 60px 5vw 46px; text-align: center; color: var(--ink-faint); font-size: 12.5px;
+    border-top: 1px dashed rgba(138, 109, 59, 0.35); line-height: 2;
+  }
+  footer .hand { font-family: "Caveat", cursive; font-size: 24px; color: var(--maple); margin-bottom: 8px; }
+
+  @media (max-width: 720px) {
+    section { padding: 76px 5vw; }
+    nav .links { gap: 18px; }
+    .scroll-hint { display: none; }
+    .node text { font-size: 28px; }
+    .node .day { font-size: 18px; }
+    .region-label { font-size: 26px; }
+    .photo-tip { display: none; } /* 移动端直接点按看详情 */
+    .pack-progress { top: 58px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top">六条人's Autumn Travel</a>
+  <div class="links">
+    <a href="#route">行程线路</a>
+    <a href="#packing">行李清单</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-inner">
+    <span class="kicker">Northern Xinjiang Loop · 2026</span>
+    <h1>六条人<span class="en">'s Autumn Travel</span></h1>
+  </div>
+  <div class="scroll-hint"><span>scroll</span><span class="line"></span></div>
+</header>
+
+<!-- ================= 第一部分：行程线路图 ================= -->
+<section id="route">
+  <div class="sec-head reveal">
+    <div class="no">01 — Route</div>
+    <h2>行程线路图</h2>
+  </div>
+
+  <div class="map-wrap reveal" id="mapWrap">
+    <svg viewBox="0 0 1200 720" id="mapSvg" role="img" aria-label="北疆大环线自驾线路图">
+      <defs>
+        <linearGradient id="routeGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#5d7a52" />
+          <stop offset="50%" stop-color="#d9a441" />
+          <stop offset="100%" stop-color="#b4533c" />
+        </linearGradient>
+        <filter id="pencilRough">
+          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="4" />
+        </filter>
+      </defs>
+
+      <!-- 手绘等高线装饰 -->
+      <g fill="none" stroke="rgba(138,109,59,0.12)" stroke-width="1.4" stroke-dasharray="6 6">
+        <path d="M-40,180 C200,120 380,240 640,180 S1100,120 1260,200" />
+        <path d="M-40,320 C220,260 420,380 680,320 S1120,260 1260,340" />
+        <path d="M-40,470 C240,410 460,530 720,470 S1140,420 1260,490" />
+        <path d="M-40,610 C260,560 500,660 760,610 S1160,560 1260,630" />
+      </g>
+
+      <!-- 地理区域标注 -->
+      <text class="region-label" x="930" y="46">阿尔泰山脉</text>
+      <text class="region-label" x="700" y="330">古尔班通古特沙漠</text>
+      <text class="region-label" x="330" y="300">准噶尔盆地</text>
+      <text class="region-label" x="290" y="700">伊犁河谷</text>
+      <text class="region-label" x="740" y="700">天 山 山 脉</text>
+
+      <!-- 手绘指北针 -->
+      <g transform="translate(92,96)" stroke="#8a6d3b" fill="none" stroke-width="1.6">
+        <circle r="34" stroke-dasharray="4 4" />
+        <circle r="26" opacity="0.5" />
+        <path d="M0,-24 L7,8 L0,2 L-7,8 Z" fill="#b4533c" stroke="none" />
+        <text y="-40" text-anchor="middle" font-family="Caveat" font-size="18" font-weight="700" fill="#8a6d3b" stroke="none">N</text>
+      </g>
+
+      <path class="route-line" id="routeLine" d="" />
+      <path class="route-progress" id="routeProgress" d="" />
+      <g id="nodes"></g>
+    </svg>
+    <div class="photo-tip" id="photoTip">
+      <img alt="" />
+      <div class="cap"><b></b><span></span></div>
+    </div>
+  </div>
+
+  <div class="map-legend reveal">
+    <span><i style="background:#b4533c"></i>行程节点（点击看详情）</span>
+    <span><i style="background:linear-gradient(90deg,#5d7a52,#d9a441,#b4533c)"></i>逆时针环线，约 2500 km</span>
+    <span class="hand-note">最后一天独库 460 km 翻天山，赶早出发</span>
+  </div>
+
+  <div class="day-strip reveal" id="dayStrip"></div>
+</section>
+
+<!-- ================= 第二部分：行李清单 ================= -->
+<section id="packing">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="no">02 — Packing</div>
+      <h2>行李清单</h2>
+      <p>六个人的份，按「深秋 + 初冬」标准准备：9 月末的北疆白天十几度、山区夜里 0°C，喀纳斯随时可能飘雪。勾选进度会自动保存在浏览器里，六个人可以分工认领。</p>
+    </div>
+
+    <div class="pack-progress reveal">
+      <span class="num" id="packNum">0 / 0</span>
+      <div class="bar"><i id="packBar"></i></div>
+      <button id="packReset" type="button">重置</button>
+    </div>
+
+    <div class="pack-grid" id="packGrid"></div>
+
+    <div class="tips reveal">
+      <div class="tip maple">
+        <b>证件随身放</b>
+        新疆加油必须刷身份证，沿途安检站密集。六个人的身份证、驾驶证、边防证（白哈巴必需，提前在户籍地免费办或布尔津现场办）各带各的，别锁进行李箱。
+      </div>
+      <div class="tip amber">
+        <b>预算参考（6 人 1 辆 MPV）</b>
+        租车 7 座 MPV（GL8/传祺M8）约 6500，油费+过路费约 3000，住宿 3 间房约 1.2 万，门票（喀纳斯230+禾木102+赛湖145+喀拉峻140+那拉提约200）×6 约 4900，吃饭约 6000 —— 合计约 3.2 万，人均 5300 左右。
+      </div>
+      <div class="tip pine">
+        <b>单车六人</b>
+        MPV 满员后行李空间有限，每人限一个登机箱 + 一个背包；至少两名司机轮换，每 2 小时进服务区休息；全员全程系安全带，后排也是。
+      </div>
+      <div class="tip lake">
+        <b>应急联系</b>
+        新疆旅游投诉 0991-12345 · 道路救援 122 · 喀纳斯景区 0906-6326004。独库公路通行情况关注「平安独山子」公众号，往年 10 月上旬封路，出发前务必确认。
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="hand">六条人's Autumn Travel · 2026</div>
+  <p>乌鲁木齐 — 阿勒泰 — 禾木 — 喀纳斯 — 白哈巴 — 克拉玛依 — 赛里木湖 — 喀拉峻 — 那拉提 — 独库公路</p>
+  <p>风景图片来自 Wikimedia Commons 贡献者（CC 许可），仅作个人旅行记录用途。</p>
+</footer>
+
+<!-- 节点详情弹窗 -->
+<div class="modal-mask" id="modalMask">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="m-close" id="modalClose" aria-label="关闭">✕</button>
+    <div class="m-img">
+      <img id="mImg" alt="" />
+      <div class="m-title">
+        <div class="m-day" id="mDay"></div>
+        <h3 id="mName"></h3>
+      </div>
+    </div>
+    <div class="m-body">
+      <span class="m-drive" id="mDrive"></span>
+      <h4 class="spot">推荐景点</h4>
+      <ul id="mSpots"></ul>
+      <h4 class="warn">注意事项</h4>
+      <ul id="mTips"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==================== 数据（节点坐标按真实经纬度投影微调） ==================== */
+const NODES = [
+  {
+    id: "urumqi", name: "乌鲁木齐", day: "Day 1 · 11", x: 975, y: 600, labelDx: 0, labelDy: 46,
+    drive: "起点 / 终点 · 地窝堡机场取还车",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%E6%96%B0%E7%96%86%E5%9B%BD%E9%99%85%E5%A4%A7%E5%B7%B4%E6%89%8E%E6%98%AF%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%E6%96%B0%E5%8D%81%E6%99%AF.jpg?width=1200",
+    caption: "国际大巴扎的穹顶",
+    spots: ["新疆国际大巴扎：手工艺品、干果、民族乐器一条街", "自治区博物馆：看「楼兰美女」干尸与丝路文物（周一闭馆，需预约）", "红山公园：登红山塔俯瞰全城日落", "领馆巷 / 和田二街：烤包子、手抓饭、卡瓦斯"],
+    tips: ["MPV 提车先做全车检查：备胎、千斤顶、三角牌、轮胎", "采购全车补给：矿泉水一箱、干粮、纸巾湿巾", "6 人 + 行李空间紧张，每人限一个登机箱 + 一个背包", "还车前加满油、洗车，不然扣清洁费"]
+  },
+  {
+    id: "s21", name: "S21 沙漠高速", day: "Day 2", x: 1055, y: 425, labelDx: -8, labelDy: 44,
+    drive: "乌鲁木齐 → 阿勒泰 · 530 km / 6.5 h",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%E6%96%B0%E7%96%86%E6%88%88%E5%A3%81%E6%BB%A9%E4%B8%8A%E7%9A%84%E5%85%AC%E8%B7%AF.jpg?width=1600",
+    caption: "穿越古尔班通古特沙漠",
+    spots: ["S21 阿乌高速：新疆首条沙漠高速，笔直穿越古尔班通古特", "克拉美丽服务区：沙漠里的网红服务区，拍沙丘与公路大片", "沿途戈壁雅丹与梭梭林，傍晚光线最佳"],
+    tips: ["早出发！沙漠段横风强，握紧方向盘", "别在沙漠里停车拍照，危险", "服务区间距长，见加油站就补油", "全程区间测速，两名以上司机轮换"]
+  },
+  {
+    id: "altay", name: "阿勒泰", day: "Day 2 · 3", x: 1035, y: 195, labelDx: 14, labelDy: -20,
+    drive: "中转补给站 · 阿禾公路起点",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Larix%20sibirica%2C%20Habahe%20County%2C%20Altay%2C%20Xinjiang%202.jpg?width=1600",
+    caption: "阿尔泰山落叶松已金黄",
+    spots: ["桦林公园：市区里的白桦林，秋日金色隧道", "将军山：城市全景机位", "阿禾公路：新疆最美公路之一，9 月底雪山 + 金黄草原"],
+    tips: ["进山前最后一次大补给，油箱务必加满", "阿禾公路弯道多，新手慢点开", "山区夜里已接近 0°C，厚衣服放随手处", "山区加油站少，半箱油就该考虑补"]
+  },
+  {
+    id: "hemu", name: "禾木", day: "Day 3 · 4", x: 960, y: 100, labelDx: 10, labelDy: -22,
+    drive: "阿勒泰 → 禾木 · 230 km / 4.5 h（阿禾公路）",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Hemu%20River%20and%20Mongolian%20Village.jpg?width=1600",
+    caption: "禾木河与图瓦村落",
+    spots: ["禾木观景台日出：6 点前上山，冷但值得，北疆第一机位", "骑马去美丽峰：2h 往返，约 150 元/人", "禾木河白桦林：金色倒影", "夜晚星空：光污染极少，银河肉眼可见"],
+    tips: ["车停门票站，坐区间车进村，行李从简", "观景台人挤人，带三脚架占机位", "村里吃饭贵，可以自备干粮", "小木屋条件有限，自带洗漱用品与睡袋内胆"]
+  },
+  {
+    id: "kanas", name: "喀纳斯", day: "Day 5 · 6", x: 898, y: 128, labelDx: -6, labelDy: 40,
+    drive: "禾木 → 喀纳斯 · 70 km / 2 h · 门票+区间车 230 元",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%96%80%E7%BA%B3%E6%96%AF%E6%99%AF%E5%8C%BA%E6%9C%88%E4%BA%AE%E6%B9%BE.jpg?width=1600",
+    caption: "月亮湾的 S 形河曲",
+    spots: ["三湾徒步：神仙湾 → 月亮湾 → 卧龙湾，下午光线好", "观鱼台：1068 级台阶俯瞰全湖，下午 4 点后光线最佳", "喀纳斯湖游船 120 元（可省，湖边栈道免费一样美）", "喀纳斯老村散步：图瓦人家访"],
+    tips: ["提前在「喀纳斯景区」公众号预约门票+区间车", "住景区里省二次进山费", "观鱼台台阶多，穿防滑徒步鞋", "9 月底可能降雪，备雨衣和鞋套"]
+  },
+  {
+    id: "baihaba", name: "白哈巴", day: "Day 7", x: 842, y: 95, labelDx: -4, labelDy: -22,
+    drive: "喀纳斯 → 白哈巴 · 区间车约 1 h · 之后直奔乌尔禾（全天 400 km / 6 h）",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%94%D0%B0%D0%BB%D1%8C%D0%BD%D0%B5%D0%B9%20%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B5%20%D0%9A%D0%B8%D1%82%D0%B0%D1%8F%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B5%20-%20China's%20Farthest%20Border%20Village%20-%20panoramio.jpg?width=1200",
+    caption: "西北第一村，边境线上",
+    spots: ["白哈巴村：「西北第一村」，中哈边境的图瓦村落", "中哈边界大峡谷：隔河望哈萨克斯坦", "村口石碑：打卡祖国西北角", "日落时分的金色草坡与木栅栏"],
+    tips: ["六个人的边防证都要提前办（户籍地免费，或布尔津现场办）", "边境区域禁飞无人机，勿对哨所军事设施拍照", "注意区间车末班时间，别误了去乌尔禾的路", "当天还要开 6 小时车，白哈巴别逗留太晚"]
+  },
+  {
+    id: "karamay", name: "克拉玛依 · 乌尔禾", day: "Day 7 · 8", x: 738, y: 380, labelDx: 16, labelDy: 38,
+    drive: "白哈巴 → 乌尔禾 · 魔鬼城日落",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%AD%E5%9B%BD%E6%96%B0%E7%96%86%E5%85%8B%E6%8B%89%E7%8E%9B%E4%BE%9D%E5%B8%82%E9%AD%94%E9%AC%BC%E5%9F%8E%20China%20Xinjiang%2C%20Karamay%20Ghost%20City%20China%20-%20panoramio.jpg?width=1600",
+    caption: "乌尔禾魔鬼城雅丹",
+    spots: ["世界魔鬼城（乌尔禾）：雅丹地貌日落，必看！《卧虎藏龙》取景地", "百里油区：磕头机绵延的工业奇观", "黑油山：原油自然冒泡的沥青丘", "艾里克湖：魔鬼城旁的静谧湖泊"],
+    tips: ["魔鬼城务必傍晚进，日落金光打在雅丹上最震撼", "日落后温差大，带外套", "景区内风大，帽子系紧、相机防沙", "从山区下到戈壁，温差十几度"]
+  },
+  {
+    id: "sayram", name: "赛里木湖", day: "Day 8 · 9", x: 195, y: 520, labelDx: 6, labelDy: 44,
+    drive: "克拉玛依 → 赛里木湖 · 450 km / 5.5 h",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20shore%20of%20Sayram%20Lake.jpg?width=1600",
+    caption: "大西洋最后一滴眼泪",
+    spots: ["环湖 90 km：东门进南门出，处处是机位", "点将台：俯瞰湖湾全景", "西海草原：湖边草甸与雪山倒影", "果子沟大桥（途经）：中国最美高速桥，出隧道瞬间最惊艳"],
+    tips: ["赛湖风大！羽绒服穿好", "湖面海拔 2073 m，别剧烈运动", "湖边住宿贵，住温泉县便宜一半", "自驾车票提前买，环湖随停随拍"]
+  },
+  {
+    id: "kalajun", name: "喀拉峻", day: "Day 9", x: 265, y: 645, labelDx: 0, labelDy: 42,
+    drive: "赛里木湖 → 特克斯 · 约 280 km / 4 h",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Kalajun%20Grassland.jpg?width=1600",
+    caption: "人体草原的曲线",
+    spots: ["喀拉峻大草原：「人体草原」，光影下的起伏曲线", "阔克苏大峡谷：鳄鱼湾、九曲十八弯日落", "特克斯八卦城：摩天轮俯瞰全城八卦布局", "琼库什台：时间充裕可加的原始村落"],
+    tips: ["景区分东西喀拉峻 + 阔克苏，建议买全域票", "九曲十八弯拍日落，提前算好区间车末班", "草原紫外线强，防晒补涂", "住特克斯县城比景区门口便宜"]
+  },
+  {
+    id: "nalati", name: "那拉提", day: "Day 10", x: 560, y: 628, labelDx: 0, labelDy: 42,
+    drive: "特克斯 → 那拉提 · 约 250 km / 3.5 h",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/Nalati%20Grassland%202.jpg?width=1600",
+    caption: "空中草原与雪山",
+    spots: ["空中草原：核心景区，雪山下的立体草原", "河谷草原：溪流与云杉", "盘龙谷道：自驾穿越的彩色山谷", "雪莲谷：远眺天山雪峰"],
+    tips: ["自驾车票提前在公众号买，旺季限量", "空中草原区间车排队久，早点进景区", "傍晚草原蚊虫多，防蚊液用上", "早点休息，第二天独库公路是硬仗"]
+  },
+  {
+    id: "duku", name: "独库公路", day: "Day 11", x: 665, y: 535, labelDx: 34, labelDy: -20,
+    drive: "那拉提 → 独山子 → 乌鲁木齐 · 约 460 km / 8 h",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/XM%20-%20Duku%20Roads%20-%20Great%20Bends.jpg?width=1600",
+    caption: "一天四季的景观大道",
+    spots: ["哈希勒根达坂：海拔 3400 m，盛夏也能摸到雪", "乔尔玛烈士陵园：缅怀 168 位筑路英雄", "唐布拉百里画廊（可选支线）", "独山子大峡谷：独库起点的红色峡谷"],
+    tips: ["独库往年 10 月上旬封路！出发前查「平安独山子」公众号确认通行", "一天经历四季，羽绒服放随手处", "弯道极多，不超车、不夜行、不疲劳驾驶", "早出发！下午要赶回乌鲁木齐还车"]
+  }
+];
+
+const DAYS = [
+  { d: "Day 1", t: "抵达乌鲁木齐", s: "取车、补给、大巴扎" },
+  { d: "Day 2", t: "乌鲁木齐 → 阿勒泰", s: "S21 沙漠高速 530 km" },
+  { d: "Day 3", t: "阿勒泰 → 禾木", s: "阿禾公路 230 km" },
+  { d: "Day 4", t: "禾木全天", s: "观景台日出、美丽峰骑马" },
+  { d: "Day 5", t: "禾木 → 喀纳斯", s: "三湾徒步 70 km" },
+  { d: "Day 6", t: "喀纳斯全天", s: "观鱼台、湖岸栈道" },
+  { d: "Day 7", t: "白哈巴 → 乌尔禾", s: "西北第一村 + 魔鬼城日落 400 km" },
+  { d: "Day 8", t: "克拉玛依 → 赛里木湖", s: "450 km，傍晚环湖" },
+  { d: "Day 9", t: "赛湖 → 喀拉峻", s: "280 km，九曲十八弯日落" },
+  { d: "Day 10", t: "喀拉峻 → 那拉提", s: "250 km，空中草原" },
+  { d: "Day 11", t: "独库公路 → 乌鲁木齐", s: "460 km 翻天山，早出发" }
+];
+
+const PACKING = [
+  { tone: "maple", title: "证件与文件", items: [
+    "身份证 ×6（加油/安检/住宿都要刷）", "驾驶证（每位司机）+ 行驶证",
+    "边防证 ×6（白哈巴必需，提前办）", "银行卡 + 现金 2000 元（山区信号差）",
+    "租车合同 / 保单（拍照存手机）", "喀纳斯/禾木/赛湖/那拉提门票预约 ×6"
+  ]},
+  { tone: "amber", title: "衣物穿搭（每人）", items: [
+    "羽绒服或厚冲锋衣", "抓绒衣 / 毛衣（中层）", "保暖内衣裤一套",
+    "速干长袖 / T恤 3–4 件", "冲锋裤 / 厚长裤 2 条", "帽子、手套、围巾",
+    "防水防滑徒步鞋", "换洗内衣袜子（11 天量）", "墨镜", "拖鞋 + 睡衣"
+  ]},
+  { tone: "pine", title: "车辆与自驾装备", items: [
+    "确认备胎、千斤顶、三角牌（提车检查）", "车载充气泵 + 胎压计", "搭电线、拖车绳",
+    "防冻玻璃水（山区夜间零下）", "手机支架 + 多口车充", "离线地图（提前下载新疆全域）",
+    "行车记录仪", "前挡遮阳板", "车载垃圾袋"
+  ]},
+  { tone: "lake", title: "药品与健康（共用）", items: [
+    "感冒药、退烧药", "肠胃药（饮食多牛羊肉）", "晕车药（盘山路多）",
+    "创可贴、碘伏棉签", "个人常用药（各自带足 11 天）", "体温计",
+    "润唇膏、护手霜（极干燥）", "防蚊液"
+  ]},
+  { tone: "amber", title: "防晒与护肤（每人）", items: [
+    "防晒霜 SPF50+（2–3 小时补涂）", "保湿面霜 / 补水面膜", "宽檐遮阳帽", "身体乳"
+  ]},
+  { tone: "pine", title: "电子数码", items: [
+    "充电宝 ×6（≤100Wh 可登机）", "相机 + 备用电池 + 存储卡",
+    "无人机（喀纳斯/赛湖部分区域禁飞，先查报备）", "多口充电头 + 插线板 ×2",
+    "数据线若干", "三脚架（星空、日出、合影）"
+  ]},
+  { tone: "lake", title: "食品与补给", items: [
+    "保温杯 ×6", "矿泉水一箱", "干粮：巧克力、坚果、牛肉干", "自热食品 4–6 份", "耐放水果、馕"
+  ]},
+  { tone: "maple", title: "日用杂物", items: [
+    "纸巾、湿巾、免洗洗手液", "洗漱包 + 毛巾（民宿可能不提供）", "雨伞 / 轻便雨衣 ×6",
+    "双肩背包（徒步、区间车换乘）", "睡袋内胆（禾木小木屋可选）", "口罩（防风沙）", "眼罩、耳塞"
+  ]}
+];
+
+/* ==================== 线路图渲染 ==================== */
+const svgNS = "http://www.w3.org/2000/svg";
+const nodesG = document.getElementById("nodes");
+
+// Catmull-Rom 平滑闭环
+function smoothPath(pts) {
+  const p = pts.map(n => [n.x, n.y]);
+  let d = `M ${p[0][0]},${p[0][1]}`;
+  for (let i = 0; i < p.length; i++) {
+    const p0 = p[(i - 1 + p.length) % p.length], p1 = p[i],
+          p2 = p[(i + 1) % p.length], p3 = p[(i + 2) % p.length];
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C ${c1[0]},${c1[1]} ${c2[0]},${c2[1]} ${p2[0]},${p2[1]}`;
+  }
+  return d + " Z";
+}
+const routeD = smoothPath(NODES);
+document.getElementById("routeLine").setAttribute("d", routeD);
+const progressPath = document.getElementById("routeProgress");
+progressPath.setAttribute("d", routeD);
+const totalLen = progressPath.getTotalLength();
+progressPath.style.strokeDasharray = totalLen;
+progressPath.style.strokeDashoffset = totalLen;
+
+NODES.forEach((n, i) => {
+  const g = document.createElementNS(svgNS, "g");
+  g.setAttribute("class", "node");
+  g.dataset.idx = i;
+  g.innerHTML = `
+    <circle class="halo" cx="${n.x}" cy="${n.y}" r="15" style="animation-delay:${i * 0.25}s"></circle>
+    <circle class="dot-ring" cx="${n.x}" cy="${n.y}" r="11"></circle>
+    <circle class="dot" cx="${n.x}" cy="${n.y}" r="6.5"></circle>
+    <text x="${n.x + n.labelDx}" y="${n.y + n.labelDy}" text-anchor="middle">${n.name}</text>
+    <text class="day" x="${n.x + n.labelDx}" y="${n.y + n.labelDy + 20}" text-anchor="middle">${n.day}</text>`;
+  nodesG.appendChild(g);
+});
+
+/* hover 照片浮层（拍立得） */
+const tip = document.getElementById("photoTip");
+const tipImg = tip.querySelector("img");
+const tipTitle = tip.querySelector("b");
+const tipCap = tip.querySelector("span");
+const mapWrap = document.getElementById("mapWrap");
+
+// 预加载小尺寸浮层图，hover 时秒出
+const tipSrcOf = (n) => n.photo.replace(/width=\d+/, "width=640");
+const tipCache = new Map();
+NODES.forEach((n) => {
+  const img = new Image();
+  img.src = tipSrcOf(n);
+  tipCache.set(n.id, img);
+});
+
+nodesG.addEventListener("mouseover", (e) => {
+  const g = e.target.closest(".node");
+  if (!g) return;
+  const n = NODES[g.dataset.idx];
+  const cached = tipCache.get(n.id);
+  // 未加载完先隐藏图片，避免显示上一个节点的旧图
+  tipImg.style.opacity = cached.complete && cached.naturalWidth ? "1" : "0";
+  tipImg.onload = () => (tipImg.style.opacity = "1");
+  tipImg.src = cached.src;
+  tipImg.alt = n.name;
+  tipTitle.textContent = n.name;
+  tipCap.textContent = n.caption;
+  const rect = mapWrap.getBoundingClientRect();
+  const px = (n.x / 1200) * rect.width;
+  const py = (n.y / 720) * rect.height;
+  const flipY = py < 250;
+  tip.style.left = Math.max(8, Math.min(px - 115, rect.width - 242)) + "px";
+  tip.style.top = (flipY ? py + 34 : py - 236) + "px";
+  tip.classList.add("show");
+});
+nodesG.addEventListener("mouseout", (e) => {
+  if (e.target.closest(".node")) tip.classList.remove("show");
+});
+
+/* 点击弹窗 */
+const mask = document.getElementById("modalMask");
+function openModal(n) {
+  document.getElementById("mImg").src = n.photo;
+  document.getElementById("mImg").alt = n.name;
+  document.getElementById("mDay").textContent = n.day;
+  document.getElementById("mName").textContent = n.name;
+  document.getElementById("mDrive").textContent = n.drive;
+  document.getElementById("mSpots").innerHTML = n.spots.map(s => `<li>${s}</li>`).join("");
+  document.getElementById("mTips").innerHTML = n.tips.map(s => `<li>${s}</li>`).join("");
+  mask.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  mask.classList.remove("open");
+  document.body.style.overflow = "";
+}
+nodesG.addEventListener("click", (e) => {
+  const g = e.target.closest(".node");
+  if (g) openModal(NODES[g.dataset.idx]);
+});
+document.getElementById("modalClose").addEventListener("click", closeModal);
+mask.addEventListener("click", (e) => { if (e.target === mask) closeModal(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+/* 行程日条 */
+document.getElementById("dayStrip").innerHTML = DAYS.map(d =>
+  `<div class="day-card"><div class="d">${d.d}</div><div class="t">${d.t}</div><div class="s">${d.s}</div></div>`
+).join("");
+
+/* ==================== 行李清单 ==================== */
+const STORE_KEY = "xj-packing-v2";
+const packGrid = document.getElementById("packGrid");
+let checkedSet = new Set(JSON.parse(localStorage.getItem(STORE_KEY) || "[]"));
+
+packGrid.innerHTML = PACKING.map((cat, ci) => `
+  <div class="pack-card reveal" data-tone="${cat.tone}">
+    <h3>${cat.title}<span class="cnt" data-cat="${ci}"></span></h3>
+    <ul>
+      ${cat.items.map((item, ii) => {
+        const id = `p${ci}-${ii}`;
+        return `<li><label class="pack-item">
+          <input type="checkbox" id="${id}" ${checkedSet.has(id) ? "checked" : ""} />
+          <span class="box"></span><span class="txt">${item}</span>
+        </label></li>`;
+      }).join("")}
+    </ul>
+  </div>`
+).join("");
+
+function refreshPack() {
+  const boxes = [...packGrid.querySelectorAll("input[type=checkbox]")];
+  const done = boxes.filter(b => b.checked).length;
+  document.getElementById("packNum").textContent = `${done} / ${boxes.length}`;
+  document.getElementById("packBar").style.width = (boxes.length ? (done / boxes.length) * 100 : 0) + "%";
+  PACKING.forEach((_, ci) => {
+    const items = [...packGrid.querySelectorAll(`[id^="p${ci}-"]`)];
+    const c = items.filter(b => b.checked).length;
+    packGrid.querySelector(`[data-cat="${ci}"]`).textContent = `${c}/${items.length}`;
+  });
+  localStorage.setItem(STORE_KEY, JSON.stringify(boxes.filter(b => b.checked).map(b => b.id)));
+}
+packGrid.addEventListener("change", refreshPack);
+document.getElementById("packReset").addEventListener("click", () => {
+  packGrid.querySelectorAll("input[type=checkbox]").forEach(b => (b.checked = false));
+  refreshPack();
+});
+refreshPack();
+
+/* ==================== 动效 ==================== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add("in");
+    if (en.target.id === "mapWrap" || en.target.contains(mapWrap)) {
+      progressPath.style.transition = "stroke-dashoffset 3.2s cubic-bezier(0.4, 0, 0.2, 1)";
+      requestAnimationFrame(() => (progressPath.style.strokeDashoffset = "0"));
+      setTimeout(() => document.getElementById("routeLine").classList.add("done"), 3400);
+    }
+    io.unobserve(en.target);
+  });
+}, { threshold: 0.18 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+const nav = document.getElementById("nav");
+addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 40), { passive: true });
+
+const heroBg = document.getElementById("heroBg");
+addEventListener("scroll", () => {
+  const y = scrollY;
+  if (y < innerHeight) heroBg.style.transform = `translateY(${y * 0.28}px)`;
+}, { passive: true });
+</script>
+</body>
+</html>
