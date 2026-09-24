@@ -5,17 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>六条人's Autumn Travel · 北疆大环线</title>
 <meta name="description" content="六个人，一辆 MPV，11天10晚。乌鲁木齐 → S21沙漠高速 → 阿勒泰 → 禾木 → 喀纳斯 → 白哈巴 → 克拉玛依 → 赛里木湖 → 喀拉峻 → 那拉提 → 独库公路，北疆大环线自驾路书与行李清单。" />
+<link rel="preconnect" href="https://commons.wikimedia.org" />
+<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+<link rel="preload" as="image" fetchpriority="high" href="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%96%80%E7%BA%B3%E6%96%AF%E6%99%AF%E5%8C%BA%E6%9C%88%E4%BA%AE%E6%B9%BE.jpg?width=1920" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Caveat:wght@500;700&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --paper: #f9f5ea;          /* 手账纸 */
-    --paper-deep: #f3eddd;
-    --ink: #3a352c;
-    --ink-soft: #776f5d;
-    --ink-faint: #aaa189;
-    --pencil: #8a6d3b;         /* 铅笔棕 */
+    --paper: #fafaf7;          /* 冷白 */
+    --paper-deep: #f1f3ee;     /* 灰绿 */
+    --ink: #2e2c28;
+    --ink-soft: #6e6a60;
+    --ink-faint: #a8a394;
+    --pencil: #6f6350;         /* 灰棕 */
     --amber: #d9a441;          /* 喀纳斯之黄 */
     --amber-deep: #b9832a;
     --pine: #5d7a52;           /* 泰加林之绿 */
@@ -85,12 +88,12 @@
   }
   .hero-bg {
     position: absolute; inset: -8% 0; z-index: 0;
-    background: url("https://commons.wikimedia.org/wiki/Special:FilePath/%E5%96%80%E7%BA%B3%E6%96%AF%E6%99%AF%E5%8C%BA%E6%9C%88%E4%BA%AE%E6%B9%BE.jpg?width=2400") center 45% / cover no-repeat, linear-gradient(160deg, #7d9b6e, #3e7c8c);
+    background: url("https://commons.wikimedia.org/wiki/Special:FilePath/%E5%96%80%E7%BA%B3%E6%96%AF%E6%99%AF%E5%8C%BA%E6%9C%88%E4%BA%AE%E6%B9%BE.jpg?width=1920") center 45% / cover no-repeat, linear-gradient(160deg, #7d9b6e, #3e7c8c);
     will-change: transform;
   }
   .hero::after {
     content: ""; position: absolute; inset: 0; z-index: 1;
-    background: linear-gradient(to top, rgba(24, 22, 14, 0.74) 0%, rgba(24, 22, 14, 0.22) 45%, rgba(24, 22, 14, 0.12) 100%);
+    background: linear-gradient(to top, rgba(16, 20, 19, 0.74) 0%, rgba(16, 20, 19, 0.22) 45%, rgba(16, 20, 19, 0.12) 100%);
   }
   .hero-inner { position: relative; z-index: 2; padding: 0 5vw 11vh; width: 100%; max-width: 1200px; margin: 0 auto; }
   .hero .kicker {
@@ -149,14 +152,14 @@
       radial-gradient(1200px 500px at 85% -10%, rgba(217, 164, 65, 0.16), transparent 60%),
       radial-gradient(900px 500px at 8% 110%, rgba(93, 122, 82, 0.15), transparent 60%),
       var(--paper-deep);
-    border: 2px solid rgba(138, 109, 59, 0.35);
-    box-shadow: var(--shadow-md), inset 0 0 60px rgba(138, 109, 59, 0.08);
+    border: 2px solid rgba(111, 99, 80, 0.35);
+    box-shadow: var(--shadow-md), inset 0 0 60px rgba(111, 99, 80, 0.08);
     transform: rotate(-0.3deg);
   }
   .map-wrap svg { display: block; width: 100%; height: auto; }
 
   .region-label {
-    font-family: var(--hand); font-size: 22px; fill: rgba(138, 109, 59, 0.4);
+    font-family: var(--hand); font-size: 22px; fill: rgba(111, 99, 80, 0.4);
     letter-spacing: 0.2em;
   }
   .route-line {
@@ -237,7 +240,7 @@
     width: min(680px, 100%); max-height: 88vh; overflow-y: auto;
     background: var(--paper); border-radius: 14px; box-shadow: var(--shadow-lg);
     transform: translateY(26px) rotate(0.5deg) scale(0.97); transition: transform 0.45s var(--ease);
-    border: 1px solid rgba(138, 109, 59, 0.3);
+    border: 1px solid rgba(111, 99, 80, 0.3);
   }
   .modal-mask.open .modal { transform: rotate(-0.3deg); }
   .modal .m-img { position: relative; height: 260px; }
@@ -276,7 +279,7 @@
   .pack-progress {
     position: sticky; top: 64px; z-index: 40;
     background: rgba(249, 245, 234, 0.92); backdrop-filter: blur(10px);
-    border: 1.5px dashed rgba(138, 109, 59, 0.4); border-radius: 12px;
+    border: 1.5px dashed rgba(111, 99, 80, 0.4); border-radius: 12px;
     padding: 14px 20px; display: flex; align-items: center; gap: 18px; margin-bottom: 36px;
   }
   .pack-progress .bar { flex: 1; height: 8px; border-radius: 99px; background: rgba(58,53,44,0.1); overflow: hidden; }
@@ -348,7 +351,7 @@
 
   footer {
     padding: 60px 5vw 46px; text-align: center; color: var(--ink-faint); font-size: 12.5px;
-    border-top: 1px dashed rgba(138, 109, 59, 0.35); line-height: 2;
+    border-top: 1px dashed rgba(111, 99, 80, 0.35); line-height: 2;
   }
   footer .hand { font-family: "Caveat", cursive; font-size: 24px; color: var(--maple); margin-bottom: 8px; }
 
@@ -405,7 +408,7 @@
       </defs>
 
       <!-- 手绘等高线装饰 -->
-      <g fill="none" stroke="rgba(138,109,59,0.12)" stroke-width="1.4" stroke-dasharray="6 6">
+      <g fill="none" stroke="rgba(111,99,80,0.12)" stroke-width="1.4" stroke-dasharray="6 6">
         <path d="M-40,180 C200,120 380,240 640,180 S1100,120 1260,200" />
         <path d="M-40,320 C220,260 420,380 680,320 S1120,260 1260,340" />
         <path d="M-40,470 C240,410 460,530 720,470 S1140,420 1260,490" />
@@ -420,11 +423,11 @@
       <text class="region-label" x="740" y="700">天 山 山 脉</text>
 
       <!-- 手绘指北针 -->
-      <g transform="translate(92,96)" stroke="#8a6d3b" fill="none" stroke-width="1.6">
+      <g transform="translate(92,96)" stroke="#6f6350" fill="none" stroke-width="1.6">
         <circle r="34" stroke-dasharray="4 4" />
         <circle r="26" opacity="0.5" />
         <path d="M0,-24 L7,8 L0,2 L-7,8 Z" fill="#b4533c" stroke="none" />
-        <text y="-40" text-anchor="middle" font-family="Caveat" font-size="18" font-weight="700" fill="#8a6d3b" stroke="none">N</text>
+        <text y="-40" text-anchor="middle" font-family="Caveat" font-size="18" font-weight="700" fill="#6f6350" stroke="none">N</text>
       </g>
 
       <path class="route-line" id="routeLine" d="" />
@@ -468,13 +471,9 @@
         <b>证件随身放</b>
         新疆加油必须刷身份证，沿途安检站密集。六个人的身份证、驾驶证、边防证（白哈巴必需，提前在户籍地免费办或布尔津现场办）各带各的，别锁进行李箱。
       </div>
-      <div class="tip amber">
-        <b>预算参考（6 人 1 辆 MPV）</b>
-        租车 7 座 MPV（GL8/传祺M8）约 6500，油费+过路费约 3000，住宿 3 间房约 1.2 万，门票（喀纳斯230+禾木102+赛湖145+喀拉峻140+那拉提约200）×6 约 4900，吃饭约 6000 —— 合计约 3.2 万，人均 5300 左右。
-      </div>
       <div class="tip pine">
         <b>单车六人</b>
-        MPV 满员后行李空间有限，每人限一个登机箱 + 一个背包；至少两名司机轮换，每 2 小时进服务区休息；全员全程系安全带，后排也是。
+        MPV 后备厢支持装 6 个 24 寸行李箱，大家注意尺寸控制；全员全程系安全带，后排也是。
       </div>
       <div class="tip lake">
         <b>应急联系</b>
